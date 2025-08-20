@@ -92,25 +92,35 @@ sLLM과 RAG(Retrieval-Augmented Generation)를 이용한 신입사원용 **업�
    - 사용자 질문이나 심사 요청이 들어오면 관련 문서를 검색하고 sLLM이 이를 컨텍스트로 활용하여 보고서를 생성
    - 내부 규정 준수 및 설명 가능성을 검증, 내부 감사 대응을 용이하게 만드는 것이 목표.
 
-## 🛠️ 기술 스택 (Tech Stack)
+## 🛠️ 기술 스택
+
 | 구분 | 기술 |
 | :--- | :--- |
-| **Backend** | Python |
-| **AI / LLM** | LangChain, Gemma (`gpt-4o-mini`) |
-| **Vector DB** | FAISS (Facebook AI Similarity Search) |
-| **Embedding** | `jhgan/ko-sbert-nli` (HuggingFace) |
-| **OCR** | PaddleOCR |
-| **Frontend** | Streamlit |
+| **Backend** | Python, Django |
+| **Frontend** | HTML, CSS, JavaScript, Bootstrap 5 |
+| **AI / LLM** | LangChain, LangGraph, OpenAI API |
+| **Vector DB** | Chroma |
+| **Etc** | LlamaParser |
+| **Deploy** | AWS |
 
 ---
 
 ## 📊 데이터 (Data)
-### 1. 데이터 수집
-- **출처:**각 대학교 입학처 홈페이지에서 공식적으로 제공하는**논술 기출 문제 및 가이드북**을 활용
-- **내용:** 실제 기출문제, 출제의도, 채점기준, 모범답안 데이터를 수집
+1. aiqwe/FinShibainu - KRX LLM 데이터셋
+1) 출처 : Hugging-Face(https://huggingface.co/aiqwe/FinShibainu)
+2) 포함된 데이터 : KRX LLM 데이터셋한국 은행 경제 금융 용어 700선, KRX규정, KRX비정기간행물, KRX청소년을위한증권투자, KRX초보투자자증권따라잡기,
+지식경제용어사전, 재무회계목차기반자체생성, 시사경제용어사전, 사업보고서사업의내용, web_text_synthetic_dataset_50k, 금융감독용어사전
 
-**주의⚠️**
-수집된 모든 자료의 저작권은 각 대학교에 있으며,**교육 및 연구 목적으로만 사용**되었고 상업적 이용은 절대 불가합니다.
+
+
+2. allganize - financial-mmlu-ko 데이터셋
+1) 출처 : Hugging-Face (https://huggingface.co/datasets/allganize/financial-mmlu-ko)
+2) 포함된 데이터 : 한국어 wikipedia 금융 분류, 한국은행 경제연구 보고서, 경제배움e - 퀴즈로 배우는 시사.경제
+
+
+3. allganie - flare-convfinqa-multiturn-ko 데이터셋
+1) 출처 : Hugging-Face (https://huggingface.co/datasets/allganize/flare-convfinqa-multiturn-ko)
+2) 포함된 데이터 : S&P 500에 상장된 기업의 실적 보고서에 관한 multi-turn QA 데이터셋
 
 ### 2. 데이터 정제 과정
 수집한 원본 PDF는 문제 혹은 해설 및 도표 등이 혼합되어 있어, AI가 학습하기 좋은 형태로 가공하는 과정이 반드시 필요함
