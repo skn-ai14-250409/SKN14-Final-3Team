@@ -106,21 +106,14 @@ sLLM과 RAG(Retrieval-Augmented Generation)를 이용한 신입사원용 **업�
 ---
 
 ## 📊 데이터 (Data)
-1. aiqwe/FinShibainu - KRX LLM 데이터셋
-1) 출처 : Hugging-Face(https://huggingface.co/aiqwe/FinShibainu)
-2) 포함된 데이터 : KRX LLM 데이터셋한국 은행 경제 금융 용어 700선, KRX규정, KRX비정기간행물, KRX청소년을위한증권투자, KRX초보투자자증권따라잡기,
-지식경제용어사전, 재무회계목차기반자체생성, 시사경제용어사전, 사업보고서사업의내용, web_text_synthetic_dataset_50k, 금융감독용어사전
-
-
-
-2. allganize - financial-mmlu-ko 데이터셋
-1) 출처 : Hugging-Face (https://huggingface.co/datasets/allganize/financial-mmlu-ko)
-2) 포함된 데이터 : 한국어 wikipedia 금융 분류, 한국은행 경제연구 보고서, 경제배움e - 퀴즈로 배우는 시사.경제
-
-
-3. allganie - flare-convfinqa-multiturn-ko 데이터셋
-1) 출처 : Hugging-Face (https://huggingface.co/datasets/allganize/flare-convfinqa-multiturn-ko)
-2) 포함된 데이터 : S&P 500에 상장된 기업의 실적 보고서에 관한 multi-turn QA 데이터셋
+*   [KB 금융 블로그 (KB의 생각)](https://kbthink.com/loan.html)
+*   [KB 국민은행 고객센터 (서식/약관)](https://obank.kbstar.com/quics?page=C019999&cc=b034360:b034261)
+*   [KB 금융그룹 IR 자료실 (연차보고서)](https://www.kbfg.com/kor/ir/report/annual/list.jsp)
+*   [여신금융협회 (자율규제)](https://www.crefia.or.kr/portal/infocenter/regulation/selfRegulation.xx)
+*   [금융감독원 (업무자료)](https://www.fss.or.kr/fss/bbs/B0000111/list.do?menuNo=200139)
+*   [금융위원회](https://www.fsc.go.kr/index)
+*   [Kaggle - 개인 신용 대출 (Loan Approval Classification)](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data/data)
+*   [Kaggle - 주택 담보 대출 (Home Loan Approval)](https://www.kaggle.com/datasets/rishikeshkonapure/home-loan-approva)
 
 ### 2. 데이터 정제 과정
 수집한 원본 PDF는 문제 혹은 해설 및 도표 등이 혼합되어 있어, AI가 학습하기 좋은 형태로 가공하는 과정이 반드시 필요함
