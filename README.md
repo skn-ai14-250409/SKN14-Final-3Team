@@ -106,6 +106,14 @@ sLLM과 RAG(Retrieval-Augmented Generation)를 이용한 신입사원용 **업�
 ---
 
 ## 📊 데이터 (Data)
+
+### 수집데이터 개요
+KB 국민은행의 여신 사업을 진행하게 될 은행 사내 직원이 여신 심사 업무 지원 플랫폼을 통해 금융 관련 질문과 답변(QnA)을 수행하고, 고객 심사 및 문서 기반 분석·보고서를 생성할 수 있는 플랫폼을 구성하기 위해 데이터를 수집함.
+
+챗봇(자체 sLLM)이 정확한 답변 및 출처를 제공하기 위해 최신 법령/제도의 문서(PDF)위주 데이터 수집과 KB 국민은행의 내규 데이터와 여신업무 관련 문서 위주로 수집하였으며, 머신러닝 기반 대출 적정성 평가와 심사 결과 보고서 작성을 하기 위해 학습에 필요한 ‘대출 승인 분류 데이터 세트’를 Kaggle에서 수집함.
+
+### 데이터 및 출처
+
 *   [KB 금융 블로그 (KB의 생각)](https://kbthink.com/loan.html)
 *   [KB 국민은행 고객센터 (서식/약관)](https://obank.kbstar.com/quics?page=C019999&cc=b034360:b034261)
 *   [KB 금융그룹 IR 자료실 (연차보고서)](https://www.kbfg.com/kor/ir/report/annual/list.jsp)
@@ -115,7 +123,7 @@ sLLM과 RAG(Retrieval-Augmented Generation)를 이용한 신입사원용 **업�
 *   [Kaggle - 개인 신용 대출 (Loan Approval Classification)](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data/data)
 *   [Kaggle - 주택 담보 대출 (Home Loan Approval)](https://www.kaggle.com/datasets/rishikeshkonapure/home-loan-approva)
 
-### 2. 데이터 정제 과정
+### 데이터 정제 과정
 수집한 원본 PDF는 문제 혹은 해설 및 도표 등이 혼합되어 있어, AI가 학습하기 좋은 형태로 가공하는 과정이 반드시 필요함
 
 - **문제 원문 추출:** 사용자가 웹 화면에서 문제를 형식(종이) 자체로 확인할 수 있도록, 원본 PDF에서 **문제 부분 별도 추출**
