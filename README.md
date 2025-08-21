@@ -102,9 +102,9 @@ sLLM과 RAG(Retrieval-Augmented Generation)를 이용한 신입사원용 **업�
 | **Web Design** | Figma |
 | **sLLM** | Qwen/Qwen2-7B-Instruct |
 | **Vector DB** | Chroma |
-| **Etc** | LlamaParser |
 | **File Storage** | AWS S3 |
 | **Deploy** | AWS EC2, Docker |
+| **Etc** | LlamaParser, Runpod |
 
 ---
 
