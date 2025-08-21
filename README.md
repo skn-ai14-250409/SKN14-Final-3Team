@@ -64,7 +64,7 @@ sLLM과 RAG(Retrieval-Augmented Generation)를 이용한 신입사원용 **업�
 
 1. **직관적인 대화형 인터페이스**
     - 복잡한 사용법 대신 챗봇을 메인으로 둠으로써 질의-답변의 간단한 시스템 구현
-2. **sLLM으로 오프라인 생태계 구축**
+2. **완벽한 데이터 주권을 위한 'On-Premise' AI**
     - 보안 최우선으로 모든 시스템이 오프라인 생태계로 운영 
 3. **RAG 시스템으로 정확한 답변 제공**
     - 환각 제로를 추구하여 많은 돈이 오가는 금융권 회사에 맞춤형 시스템 제공
@@ -114,14 +114,10 @@ KB 국민은행의 여신 사업을 진행하게 될 은행 사내 직원이 여
 
 ### 데이터 및 출처
 
-*   [KB 금융 블로그 (KB의 생각)](https://kbthink.com/loan.html)
-*   [KB 국민은행 고객센터 (서식/약관)](https://obank.kbstar.com/quics?page=C019999&cc=b034360:b034261)
-*   [KB 금융그룹 IR 자료실 (연차보고서)](https://www.kbfg.com/kor/ir/report/annual/list.jsp)
-*   [여신금융협회 (자율규제)](https://www.crefia.or.kr/portal/infocenter/regulation/selfRegulation.xx)
-*   [금융감독원 (업무자료)](https://www.fss.or.kr/fss/bbs/B0000111/list.do?menuNo=200139)
-*   [금융위원회](https://www.fsc.go.kr/index)
-*   [Kaggle - 개인 신용 대출 (Loan Approval Classification)](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data/data)
-*   [Kaggle - 주택 담보 대출 (Home Loan Approval)](https://www.kaggle.com/datasets/rishikeshkonapure/home-loan-approva)
+*   [KB 금융 블로그 (KB의 생항
+
+데이터 전처리 과정에서는 PDF 문서를 단순히 불러오는 것만으로는 충분하지 않다는 점을 유의해야 함. 예를 들어, PDF 문서의 특성상 표, 이미지, 각주, 머리말·꼬리말, 불필요한 공백이나 줄바꿈 등이 그대로 텍스트로 추출되면 문장이 끊기거나 의미가 왜곡될 수 있음. 또한 약관, 규정, 상품설명서와 같은 금융 문서들은 법률적 용어와 긴 문장이 많아 작은 오류만 있어도 검색이나 질의응답 시 부정확한 결과가 발생할 수 있음. 이러한 문제를 해결하기 위해서는 단순 로더(loader)를 통한 불러오기보다는 파서(parser)를 활용하여 텍스트 구조를 보다 정교하게 추출하고, 이후 불필요한 기호 제거, 문장 단위 분할, 표준화와 같은 전처리를 거쳐야 함. 최종적으로는 이러한 전처리 과정을 통해 데이터의 품질을 확보함으로써 RAG 시스템에서의 검색 정확도를 높이고, 파인튜닝 데이터셋 역시 안정적으로 구축할 수 있음.
+
 
 ### 데이터 정제 과정
 수집한 원본 PDF는 문제 혹은 해설 및 도표 등이 혼합되어 있어, AI가 학습하기 좋은 형태로 가공하는 과정이 반드시 필요함
